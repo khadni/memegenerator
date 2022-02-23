@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import memesData from "../memesData";
 
 export default function Meme() {
-  function handleClick() {
-    console.log("hello ca va");
-  }
+  const [url, setUrl] = useState("https://i.imgflip.com/30b1gx.jpg");
+  const [upperText, setUpperText] = useState("Your upper text here");
+  const [lowerText, setLowerText] = useState("Your lower text here");
 
-  function randomPick() {
+  function changeUrl() {
     const memesArray = memesData.data.memes;
     const totalMemes = memesArray.length;
-    const randomMeme = Math.ceil(Math.random * totalMemes);
-    console.log(randomMeme);
+    const randomMeme = Math.ceil(Math.random() * totalMemes);
+    const randomPicUrl = memesArray[randomMeme].url;
+    setUrl(randomPicUrl);
+  }
+
+  function setUpperText() {
+    setUpperText();
+  }
+
+  function setLowerText() {
+    setUpperText();
   }
 
   return (
@@ -23,26 +32,23 @@ export default function Meme() {
               id="name"
               name="firstText"
               placeholder="Upper text..."
-              required
             />
             <input
               type="text"
               id="name"
               name="secondText"
               placeholder="Down text..."
-              required
             />
           </div>
-
-          <button className="generator" onClick={randomPick}>
-            Generate new meme image
+          <button className="generator" onClick={changeUrl}>
+            Generate a new meme image
           </button>
         </div>
       </div>
 
       <div className="container">
         <div className="imgOutput">
-          <img src="http://www.slate.fr/sites/default/files/styles/1200x680/public/oq7hs.jpg" />
+          <img src={url} />
         </div>
       </div>
     </div>

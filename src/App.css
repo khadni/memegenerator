@@ -19,6 +19,10 @@ header {
   color: white;
 }
 
+header span img {
+  width: 80px;
+}
+
 .logo {
   font-weight: 900;
   font-size: 1.3rem;
@@ -76,7 +80,18 @@ header {
   );
 }
 
+.generator:active {
+  background: linear-gradient(
+    90deg,
+    rgba(103, 34, 128, 0.85),
+    rgba(166, 38, 211, 0.85)
+  );
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  transform: translateY(4px);
+}
+
 .imgOutput img {
   padding-top: 30px;
   width: 100%;
+  margin: 0 auto;
 }
