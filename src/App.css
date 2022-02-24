@@ -90,8 +90,35 @@ header span img {
   transform: translateY(4px);
 }
 
+.imgOutput {
+  position: relative;
+}
+
 .imgOutput img {
   padding-top: 30px;
   width: 100%;
-  margin: 0 auto;
+}
+
+.imgUpperText{
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  color: white;
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 10px;
+  text-shadow:0 4px 0 #000000, 0 -4px 0 #000000;
+  text-transform: uppercase;
+}
+
+.imgLowerText{
+  position: absolute;
+  bottom: 50px;
+  left: 120px;
+  color: white;
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 10px;
+  text-shadow:0 4px 0 #000000, 0 -4px 0 #000000;
+  text-transform: uppercase;
 }

@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import memesData from "../memesData";
 
 export default function Meme() {
-  const [url, setUrl] = useState("https://i.imgflip.com/30b1gx.jpg");
-  const [upperText, setUpperText] = useState("Your upper text here");
-  const [lowerText, setLowerText] = useState("Your lower text here");
+  // ------ Images URL states and setStates ------
 
+  const [url, setUrl] = useState("https://i.imgflip.com/30b1gx.jpg");
   function changeUrl() {
     const memesArray = memesData.data.memes;
     const totalMemes = memesArray.length;
@@ -14,13 +13,19 @@ export default function Meme() {
     setUrl(randomPicUrl);
   }
 
-  function setUpperText() {
-    setUpperText();
+  // ------ Texts states and setStates ------
+
+  const [upperText, setUpperText] = useState("Your upper text here");
+  const [lowerText, setLowerText] = useState("Your lower text here");
+  function changeUpperText() {
+    setUpperText((prevState) => {
+      return prevState + "AAA";
+    });
   }
 
-  function setLowerText() {
-    setUpperText();
-  }
+  function changeLowerText() {}
+
+  // ----------------------------------------
 
   return (
     <div className="main">
@@ -48,7 +53,9 @@ export default function Meme() {
 
       <div className="container">
         <div className="imgOutput">
+          <span className="imgUpperText">{upperText}</span>
           <img src={url} />
+          <span className="imgLowerText">{lowerText}</span>
         </div>
       </div>
     </div>
