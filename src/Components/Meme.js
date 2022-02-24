@@ -2,28 +2,28 @@ import React, { useState } from "react";
 import memesData from "../memesData";
 
 export default function Meme() {
-  // ------ Images URL states and setStates ------
+  // ------ meme states and setStates ------
 
-  const [url, setUrl] = useState("https://i.imgflip.com/30b1gx.jpg");
-  function changeUrl() {
-    const memesArray = memesData.data.memes;
+  const [meme, setMeme] = useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  });
+
+  function getMemeImage() {
+    const memesArray = allMemeImage.data.memes;
     const totalMemes = memesArray.length;
     const randomMeme = Math.ceil(Math.random() * totalMemes);
     const randomPicUrl = memesArray[randomMeme].url;
-    setUrl(randomPicUrl);
-  }
-
-  // ------ Texts states and setStates ------
-
-  const [upperText, setUpperText] = useState("Your upper text here");
-  const [lowerText, setLowerText] = useState("Your lower text here");
-  function changeUpperText() {
-    setUpperText((prevState) => {
-      return prevState + "AAA";
+    setMeme((prevMeme) => {
+      return {
+        ...prevMeme,
+        randomImage: randomPicUrl,
+      };
     });
   }
 
-  function changeLowerText() {}
+  const [allMemeImage, setAllMemeImage] = useState(memesData);
 
   // ----------------------------------------
 
@@ -45,7 +45,7 @@ export default function Meme() {
               placeholder="Down text..."
             />
           </div>
-          <button className="generator" onClick={changeUrl}>
+          <button className="generator" onClick={getMemeImage}>
             Generate a new meme image
           </button>
         </div>
@@ -53,9 +53,9 @@ export default function Meme() {
 
       <div className="container">
         <div className="imgOutput">
-          <span className="imgUpperText">{upperText}</span>
-          <img src={url} />
-          <span className="imgLowerText">{lowerText}</span>
+          <span className="imgUpperText"></span>
+          <img src={meme.randomImage} />
+          <span className="imgLowerText"></span>
         </div>
       </div>
     </div>
