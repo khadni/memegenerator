@@ -95,30 +95,43 @@ header span img {
 }
 
 .imgOutput img {
-  padding-top: 30px;
   width: 100%;
 }
 
-.imgUpperText{
+.imgUpperText {
   position: absolute;
-  top: 60px;
-  left: 120px;
-  color: white;
-  font-weight: 900;
-  font-size: 2rem;
-  padding: 10px;
-  text-shadow:0 4px 0 #000000, 0 -4px 0 #000000;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
   text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+  top: 10px;
 }
 
-.imgLowerText{
+.imgLowerText {
   position: absolute;
-  bottom: 50px;
-  left: 120px;
-  color: white;
-  font-weight: 900;
-  font-size: 2rem;
-  padding: 10px;
-  text-shadow:0 4px 0 #000000, 0 -4px 0 #000000;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
   text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+  bottom: 10px;
 }

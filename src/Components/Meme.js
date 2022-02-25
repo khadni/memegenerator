@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import memesData from "../memesData";
 
 export default function Meme() {
-  // ------ meme states and setStates ------
-
   const [meme, setMeme] = useState({
-    topText: "",
-    bottomText: "",
+    topText: "Try to be funny",
+    bottomText: ".. and add your text",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
+
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setMeme((prevMeme) => {
+      return {
+        ...prevMeme,
+        [name]: value,
+      };
+    });
+  }
 
   function getMemeImage() {
     const memesArray = allMemeImage.data.memes;
@@ -34,15 +42,15 @@ export default function Meme() {
           <div className="inputFields">
             <input
               type="text"
-              id="name"
-              name="firstText"
-              placeholder="Upper text..."
+              name="topText"
+              value={meme.topText}
+              onChange={handleChange}
             />
             <input
               type="text"
-              id="name"
-              name="secondText"
-              placeholder="Down text..."
+              name="bottomText"
+              value={meme.bottomText}
+              onChange={handleChange}
             />
           </div>
           <button className="generator" onClick={getMemeImage}>
@@ -53,9 +61,9 @@ export default function Meme() {
 
       <div className="container">
         <div className="imgOutput">
-          <span className="imgUpperText"></span>
+          <span className="imgUpperText">{meme.topText}</span>
+          <span className="imgLowerText">{meme.bottomText}</span>
           <img src={meme.randomImage} />
-          <span className="imgLowerText"></span>
         </div>
       </div>
     </div>
