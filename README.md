@@ -15,5 +15,5 @@ This project is my first React App. Learning from Codecademy and practicing from
 - Controlled inputs
 
 ### Links
-[codecademy](https://codecademy.com/)
-[scrimba](https://scrimba.com/)
++ [codecademy](https://codecademy.com/)
++ [scrimba](https://scrimba.com/)
