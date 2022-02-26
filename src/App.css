@@ -50,10 +50,12 @@ header span img {
   outline: none;
   border-color: rgb(172, 172, 172);
   padding-left: 10px;
+  font-size: 1.25em;
 }
 
 .inputFields input:focus {
   outline: none !important;
+  background-color: hsl(34, 78%, 95%);
 }
 
 .generator {
@@ -61,7 +63,7 @@ header span img {
   height: 45px;
   width: 100%;
   color: white;
-  font-size: 15px;
+  font-size: 1.25rem;
   font-weight: 600;
   background: linear-gradient(
     90deg,
