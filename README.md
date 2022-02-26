@@ -15,6 +15,7 @@ This project is my first React App. Learning from Codecademy and practicing from
 - conditional rendering
 - React forms
 - Controlled inputs
+- useEffect / cleanup / async
 
 ### Links
 + [codecademy](https://codecademy.com/)
